@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project's Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!-- Sticky Header -->
+	<ul class="header">
+		<li><div class="dropdown">
+	  			<button class="dropbtn">Home</button>
+	  			<div class="dropdown-content">
+				    <a href="index.html">Home</a>
+				    <a href="https://docs.google.com/document/d/1CKAWVR20Lihll-tX0rGrnfI0-fBCPrKd3wvrC9ZcmjU/edit#heading=h.60xjrq3vgiqo">Resume</a>
+		  		</div>
+			</div>
+		</div></li>
+		<li><div class="dropdown">
+	  			<button class="dropbtn">Projects</button>
+	  			<div class="dropdown-content">
+				    <a href="spacial.html">Spacial Defense</a>
+				    <a href="cardboard.html">Cardboard Kid</a>
+				    <a href="vibe.html">Whats The Vibe?</a>
+		  		</div>
+			</div>
+		</div></li>
+		<li><div class="dropdown">
+	  			<button class="dropbtn">Demos/Jams</button>
+	  			<div class="dropdown-content">
+				    <a href="demos.html">Demos</a>
+				    <a href="gmtk.html">GMTK 2023 Submission</a>
+		  		</div>
+			</div>
+		</div></li>
+		<li><div class="dropdown">
+	  			<button class="dropbtn">Other Design Docs</button>
+	  			<div class="dropdown-content">
+				    <a href="gdd.html">Game Design Docs</a>
+				    <a href="atlas.html">CurPhoe Atlas</a>
+		  		</div>
+			</div>
+		</div></li>
+	</ul>
+
+	<!-- Title Page -->
+	<h2 class="projectTitle">Cardboard Kid</h2>
+	<hr width="100%" color="black" />
+
+	<div  class="description">
+		<p> Cardboard Kid was a group project done at my university, UCI. I was the lead programmer primarily in charge of playermovent, interaction and obstacles. My Duties Included:<br></p>
+		<ul class="projectList">
+			<li>Implementing the player movement</li>
+			<li>Creating the weapon/combat system</li>
+			<li>Creating and Implementing the red barrier blocks</li>
+			<li>Conceptualizing the various enemies, tracking enemy and pursuing enemy</li>
+			<li>Coming up with the initial cardboard theme</li>
+			<li>Collaborating with my team on level ideas</li>
+			<li>The game is playable here:<a href="https://ryanwdev.itch.io/cardboard-kid">Link</a></li>
+		</ul>
+	</div>
+	<hr width="100%" color="black" />
+
+	<!-- Screenshot Slideshow -->
+	<div class="background">
+		<div class="slideshow-container">
+
+		  <!-- Full-width images with number and caption text -->
+		  <div class="mySlides fade">
+		    <div class="numbertext">1 / 5</div>
+		    <img src="images/CardBoardKidSC.png" style="width:100%">
+		    <div class="text">Main Menu</div>
+		  </div>
+
+		  <div class="mySlides fade">
+		    <div class="numbertext">2 / 5</div>
+		    <img src="images/CardBoardKidSC2.png" style="width:100%">
+		    <div class="text">Level 1</div>
+		  </div>
+
+		  <div class="mySlides fade">
+		    <div class="numbertext">3 / 5</div>
+		    <img src="images/CardBoardKidSC3.png" style="width:100%">
+		    <div class="text">Level 2 with Enemy</div>
+		  </div>
+
+		  <div class="mySlides fade">
+		    <div class="numbertext">4 / 5</div>
+		    <img src="images/CardBoardKidSC4.png" style="width:100%">
+		    <div class="text">Level 3 with Enemies and Barriers</div>
+		  </div>
+
+		  <div class="mySlides fade">
+		    <div class="numbertext">5 / 5</div>
+		    <img src="images/CardBoardKidSC5.png" style="width:100%">
+		    <div class="text">Level 5 Boss Fight</div>
+		  </div>
+
+		  <!-- Next and previous buttons -->
+		  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+
+		<!-- The dots/circles -->
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span>
+		  <span class="dot" onclick="currentSlide(2)"></span>
+		  <span class="dot" onclick="currentSlide(3)"></span>
+		  <span class="dot" onclick="currentSlide(4)"></span>
+		  <span class="dot" onclick="currentSlide(5)"></span>
+		</div>
+	</div>
+
+<!-- Code for image Slideshow (Put into JS section l8r) -->
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
