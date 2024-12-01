@@ -6,31 +6,32 @@
 	<title>Project's Page</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="body">
 <!-- Sticky Header -->
 	<ul class="header">
 		<li><div class="dropdown">
 	  			<button class="dropbtn">Home</button>
 	  			<div class="dropdown-content">
 				    <a href="index.html">Home</a>
-				    <a href="https://docs.google.com/document/d/1CKAWVR20Lihll-tX0rGrnfI0-fBCPrKd3wvrC9ZcmjU/edit#heading=h.60xjrq3vgiqo">Resume</a>				    
+				    <a href="bio.html">About Me</a>
+				    <a href="https://docs.google.com/document/d/1N08gwHSWWkeCkPUcTzfrXs6HnGHxhWX4eyj6N72wcJQ/edit?tab=t.0">Resume</a>				    
 		  		</div>
 			</div>
 		</div></li>
 		<li><div class="dropdown">
 	  			<button class="dropbtn">Projects</button>
 	  			<div class="dropdown-content">
-				    <a href="spacial.html">Spacial Defense</a>
+				    <a href="vibe.html">Gunslinger Breakout</a>
+				    <a href="shift.html">Time Shift</a>
+				    <a href="spacial.html">Spacial Defense</a>				    
 				    <a href="cardboard.html">Cardboard Kid</a>
-				    <a href="vibe.html">Whats The Vibe?</a>
 		  		</div>
 			</div>
 		</div></li>
 		<li><div class="dropdown">
-	  			<button class="dropbtn">Demos/Jams</button>
+	  			<button class="dropbtn">Demos</button>
 	  			<div class="dropdown-content">
 				    <a href="demos.html">Demos</a>
-				    <a href="gmtk.html">GMTK 2023 Submission</a>
 		  		</div>
 			</div>
 		</div></li>
@@ -38,7 +39,6 @@
 	  			<button class="dropbtn">Other Design Docs</button>
 	  			<div class="dropdown-content">
 				    <a href="gdd.html">Game Design Docs</a>
-				    <a href="atlas.html">CurPhoe Atlas</a>
 		  		</div>
 			</div>
 		</div></li>
@@ -49,20 +49,11 @@
 	<hr width="100%" color="black" />
 
 	<div  class="description">
-		<p> Spacial Defense was a solo project created with Unity that I released in 2021. My Duties Included:<br></p>
-		<ul class="projectList">
-			<li>Used a Queue to move towers throughout the level</li>
-			<li>Utilizing Coroutines to spawn different types of enemies at specific intervals</li>
-			<li>Creating a Tower Upgrade system based on points</li>
-			<li>Implemented a Trackable High Score</li>
-			<li>Creating the three tower (bomb, speed, freeze) art assets in MagicaVoxel</li>
-			<li>Creating the enemy art assets</li>
-			<li>Creating the music for the game</li>
-			<li>Designing the game space and both levels</li>
-			<li>Designing the UI and Tutorial Level</li>
-			<li>All other assets belong to their repsective owners</li>
-			<li>The game is playable here:<a href="https://simmer.io/@Teddybar5/spacialdefense">Link</a></li>
-		</ul>
+		<p class="headerText"> Overview <br></p>
+		<p class="bodyText"> Spacial Defense is a 2.5D Tower Defense game where the player must manage 3 towers with different abilities to prevent waves of enemies from reaching their base. Move towers alongside the enemies in order to beat waves. After certain score milestones players can upgrade their towers. Compete to get a highscore in this arcade style game! <br> </p>
+		<p class="headerText"> Role <br></p>
+		<p class="bodyText"> Project Lead, Game, Level, and Systems Design, Lead Programmer, Art Director, Music Designer. Created the art assets for the towers. <br> </p>
+		<p class="smallHeaderText">	The game is playable here:<a  href="https://simmer.io/@Teddybar5/spacialdefense">Link</a></p>
 	</div>
 	<hr width="100%" color="black" />
 
@@ -79,25 +70,25 @@
 
 		  <div class="mySlides fade">
 		    <div class="numbertext">2 / 6</div>
-		    <img src="images/SpacialDefenseSC2.png" style="width:100%">
+		    <img src="images/spacialDefenseSC2.png" style="width:100%">
 		    <div class="text">Level 1 Wave 4</div>
 		  </div>
 
 		  <div class="mySlides fade">
 		    <div class="numbertext">3 / 6</div>
-		    <img src="images/SpacialDefenseSC3.png" style="width:100%">
+		    <img src="images/spacialDefenseSC3.png" style="width:100%">
 		    <div class="text">Level 1 Wave 5 (Boss Fight)</div>
 		  </div>
 
 		  <div class="mySlides fade">
 		    <div class="numbertext">4 / 6</div>
-		    <img src="images/SpacialDefenseSC4.png" style="width:100%">
+		    <img src="images/spacialDefenseSC4.png" style="width:100%">
 		    <div class="text">Level 2 Wave 1</div>
 		  </div>
 
 		  <div class="mySlides fade">
 		    <div class="numbertext">5 / 6</div>
-		    <img src="images/SpacialDefenseSC5.png" style="width:100%">
+		    <img src="images/spacialDefenseSC5.png" style="width:100%">
 		    <div class="text">Level 2 Wave 4</div>
 		  </div>
 
@@ -123,6 +114,25 @@
 		  <span class="dot" onclick="currentSlide(6)"></span>
 		</div>
 	</div>
+	<hr width="100%" color="black" />
+
+	<div  class="description">
+		<p class="headerText"> More Info <br></p>
+		<p class="bodyText"> For this game I wanted to make a unique tower defense game. That is where the idea for moving towers and multiple spawn points came from. I ended up with a very satisfying arcade gameplay loop of moving the towers frantically alongside the enemies in order to defeat waves. The particle effects upon hitting and destroying enemies also added to the satisfying nature of the game. The game was created using Unity and all scripts were written in C#. <br> </p>
+		<p class="smallHeaderText"> Game Design <br> </p>
+		<p class="bodyText"> Features I designed and implemented for <i> Spacial Defense: </i> <br> </p>
+		<ul class="projectList">
+			<li>Level Design and Construction</li>
+			<li>All the Programming for the game</li>
+			<li>Enemy Design and Wave Systems and Balancing</li>
+			<li>Menu and UI Design</li>
+			<li>Tutorial Design and Implementation</li>
+			<li>Music Composition and Development</li>
+		</ul>	
+	</div>
+<!-- Footer -->
+	<div class="footer"></div>
+
 
 <!-- Code for image Slideshow -->
 <script>
