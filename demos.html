@@ -6,31 +6,32 @@
 	<title>Jake Preston's Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="body">
 <!-- Sticky Header -->
 	<ul class="header">
 		<li><div class="dropdown">
 	  			<button class="dropbtn">Home</button>
 	  			<div class="dropdown-content">
 				    <a href="index.html">Home</a>
-				    <a href="https://docs.google.com/document/d/1CKAWVR20Lihll-tX0rGrnfI0-fBCPrKd3wvrC9ZcmjU/edit#heading=h.60xjrq3vgiqo">Resume</a>
+				    <a href="bio.html">About Me</a>
+				    <a href="https://docs.google.com/document/d/1N08gwHSWWkeCkPUcTzfrXs6HnGHxhWX4eyj6N72wcJQ/edit?tab=t.0">Resume</a>
 		  		</div>
 			</div>
 		</div></li>
 		<li><div class="dropdown">
 	  			<button class="dropbtn">Projects</button>
 	  			<div class="dropdown-content">
-				    <a href="spacial.html">Spacial Defense</a>
+				    <a href="vibe.html">Gunslinger Breakout</a>
+				    <a href="shift.html">Time Shift</a>
+				    <a href="spacial.html">Spacial Defense</a>				    
 				    <a href="cardboard.html">Cardboard Kid</a>
-				    <a href="vibe.html">Whats The Vibe?</a>
 		  		</div>
 			</div>
 		</div></li>
 		<li><div class="dropdown">
-	  			<button class="dropbtn">Demos/Jams</button>
+	  			<button class="dropbtn">Demos</button>
 	  			<div class="dropdown-content">
 				    <a href="demos.html">Demos</a>
-				    <a href="gmtk.html">GMTK 2023 Submission</a>
 		  		</div>
 			</div>
 		</div></li>
@@ -38,7 +39,6 @@
 	  			<button class="dropbtn">Other Design Docs</button>
 	  			<div class="dropdown-content">
 				    <a href="gdd.html">Game Design Docs</a>
-				    <a href="atlas.html">CurPhoe Atlas</a>
 		  		</div>
 			</div>
 		</div></li>
@@ -48,11 +48,43 @@
 	<!-- Title Page -->
 	<h2 class="projectTitle">Demos</h2>
 	<hr width="100%" color="black" />
+	<div  class="demoDescription">
+		<p><em>The Forgotten Dream:</em><br> This is an unfinished story-rich puzzle/mystery game. The player wakes up on a mysterious beach and needs to discover who they are and why they are there. The fog exists to disorient the player by teleporting them to a random location, so they can end up seeing the beach they just left from a different perspective instead of making progress. I added an interaction system where interactable items are highlighted as the player hovers over them. After interacting with the bed the player is teleported to the "dream zone" where I used Unity's timeline system to move NPCs and objects around in a scripted manner.<br> Link to a Game Design Document for this project: <a href="https://docs.google.com/document/d/15FCNWAf3Hidp5A4sHplRAn_EIt9-i64ACcuEKmPY4NM/edit">Link</a> </p>
 
+		<video width="50%" height="30%" controls>
+  			<source src="video/LostDream.mp4" type="video/mp4">
+  			<source src="video/LostDream.ogg" type="video/ogg">
+		Your browser does not support the video tag.
+		</video>
+	</div>
+
+	<hr width="100%" color="black" />
+	<div  class="demoDescription">
+		<p><em>Save The World</em><br> Save The World is a 3D demo where the player must collect resources from other worlds in accordance to what the request board wants in order to level up their town. As the level increases so does the demand for more resources and since the player can only sleep once per day to restock it becomes increasingly more difficult to meet the demand. Ultimately the player reaches a point where they must recognize that any further expansion will lead to ruin for not just their world but the other worlds they gather resources from and stop expanding. This game will be a message about the real world and how continued exploitation of Earth will only lead to ruin, and we must slow down or stop this constant expansion. </p>
+
+		<video width="50%" height="30%" controls>
+  			<source src="video/SaveTheWorld.mp4" type="video/mp4">
+  			<source src="video/SaveTheWorld.ogg" type="video/ogg">
+		Your browser does not support the video tag.
+		</video>
+	</div>
+
+	<hr width="100%" color="black" />
+	<div  class="demoDescription">
+		<p><em>What's The Vibe?:</em><br> What’s The Vibe? Is a competitive city building game where players can play vs. another player or against an AI enemy. Build certain buildings in order to collect resources to build more buildings, activate abilities, and ultimately accumulate “vibes” or a higher score. For this project I was the lead designer and programmer. I believe this game has a lot of potential for fast-paced gameplay between players in a genre that is typically very slow and methodical. What's the Vibe? offers a fresh perspective on city-building games that provides a unique experience. <br> The game is playable here: <a href="https://teddybar5.itch.io/whats-the-vibe">Link</a></p>
+
+		<video width="50%" height="30%" controls>
+  			<source src="video/Vibe.mp4" type="video/mp4">
+  			<source src="video/Vibe.ogg" type="video/ogg">
+		Your browser does not support the video tag.
+		</video>
+	</div>
+
+	<hr width="100%" color="black" />
 	<div  class="demoDescription">
 		<p><em>Fire Tender:</em><br> This is an unfinished project where the player must traverse the fog looking for wood to add to the fire, if the fire runs out the player loses. There are some simply animated assets. I experimented with a modular procedurally generator world as well. </p>
 
-		<video width="320" height="240" controls>
+		<video width="50%" height="30%" controls>
   			<source src="video/FireTender1.mp4" type="video/mp4">
   			<source src="video/FireTender1.ogg" type="video/ogg">
 		Your browser does not support the video tag.
@@ -61,27 +93,18 @@
 	<hr width="100%" color="black" />
 
 	<div  class="demoDescription">
-		<p><em>Spider Animation Demo:</em><br> Here I utilized a premade model to create spiderlike movement through the use of procedurally animated kinematic joints and bones. I used raycasting and a coroutine so the program "knew" where to put each leg, animating the legs naturally through code. I also had to make sure the body rotated naturally on different terrain. </p>
+		<p><em>Spider Animation Demo:</em><br> For this project I animated a premade model to give it realistic, spiderlike movement. I accomplished this through the use of procedurally animated kinematic joints and bones. I used raycasting and a coroutine so the program "knew" where to put each leg, animating the legs naturally through code. I also had to make sure the body rotated naturally on different terrain. I plan to use this animated model in future projects. </p>
 
-		<video width="320" height="240" controls>
+		<video width="50%" height="30%" controls>
   			<source src="video/spider.mp4" type="video/mp4">
   			<source src="video/spider.ogg" type="video/ogg">
 		Your browser does not support the video tag.
 		</video>
 	</div>
-	<hr width="100%" color="black" />
 
-	<div  class="demoDescription">
-		<p><em>The Forgotten Dream:</em><br> This is an unfinished story-rich puzzle/mystery game. The player wakes up on a mysterious beach and needs to discover who they are and why they are there. The fog exists to disorient the player by teleporting them to a random location, so they can end up seeing the beach they just left from a different perspective instead of making progress. I added an interaction system where interactable items are highlighted as the player hovers over them. After interacting with the bed the player is teleported to the "dream zone" where I used Unity's timeline system to move npcs and objects around in a scripted manner.<br> Link to a Game Design Document for this project: <a href="https://docs.google.com/document/d/15FCNWAf3Hidp5A4sHplRAn_EIt9-i64ACcuEKmPY4NM/edit">Link</a> </p>
 
-		<video width="320" height="240" controls>
-  			<source src="video/LostDream.mp4" type="video/mp4">
-  			<source src="video/LostDream.ogg" type="video/ogg">
-		Your browser does not support the video tag.
-		</video>
-	</div>
-	<hr width="100%" color="black" />
-
+<!-- Footer -->
+	<div class="footer"></div>
 
 </body>
 </html>
