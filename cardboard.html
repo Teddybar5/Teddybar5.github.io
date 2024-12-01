@@ -6,31 +6,32 @@
 	<title>Project's Page</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="body">
 <!-- Sticky Header -->
 	<ul class="header">
 		<li><div class="dropdown">
 	  			<button class="dropbtn">Home</button>
 	  			<div class="dropdown-content">
 				    <a href="index.html">Home</a>
-				    <a href="https://docs.google.com/document/d/1CKAWVR20Lihll-tX0rGrnfI0-fBCPrKd3wvrC9ZcmjU/edit#heading=h.60xjrq3vgiqo">Resume</a>
+				    <a href="bio.html">About Me</a>
+				    <a href="https://docs.google.com/document/d/1N08gwHSWWkeCkPUcTzfrXs6HnGHxhWX4eyj6N72wcJQ/edit?tab=t.0">Resume</a>
 		  		</div>
 			</div>
 		</div></li>
 		<li><div class="dropdown">
 	  			<button class="dropbtn">Projects</button>
 	  			<div class="dropdown-content">
-				    <a href="spacial.html">Spacial Defense</a>
+				    <a href="vibe.html">Gunslinger Breakout</a>
+				    <a href="shift.html">Time Shift</a>
+				    <a href="spacial.html">Spacial Defense</a>				    
 				    <a href="cardboard.html">Cardboard Kid</a>
-				    <a href="vibe.html">Whats The Vibe?</a>
 		  		</div>
 			</div>
 		</div></li>
 		<li><div class="dropdown">
-	  			<button class="dropbtn">Demos/Jams</button>
+	  			<button class="dropbtn">Demos</button>
 	  			<div class="dropdown-content">
 				    <a href="demos.html">Demos</a>
-				    <a href="gmtk.html">GMTK 2023 Submission</a>
 		  		</div>
 			</div>
 		</div></li>
@@ -38,7 +39,6 @@
 	  			<button class="dropbtn">Other Design Docs</button>
 	  			<div class="dropdown-content">
 				    <a href="gdd.html">Game Design Docs</a>
-				    <a href="atlas.html">CurPhoe Atlas</a>
 		  		</div>
 			</div>
 		</div></li>
@@ -49,16 +49,11 @@
 	<hr width="100%" color="black" />
 
 	<div  class="description">
-		<p> Cardboard Kid was a group project done at my university, UCI. I was the lead programmer primarily in charge of playermovent, interaction and obstacles. My Duties Included:<br></p>
-		<ul class="projectList">
-			<li>Implementing the player movement</li>
-			<li>Creating the weapon/combat system</li>
-			<li>Creating and Implementing the red barrier blocks</li>
-			<li>Conceptualizing the various enemies, tracking enemy and pursuing enemy</li>
-			<li>Coming up with the initial cardboard theme</li>
-			<li>Collaborating with my team on level ideas</li>
-			<li>The game is playable here:<a href="https://ryanwdev.itch.io/cardboard-kid">Link</a></li>
-		</ul>
+		<p class="headerText"> Overview <br></p>
+		<p class="bodyText"> Cardboard kid is a 2D platformer I made as a part of a group project at my University, UC Irvine. I was primarily responsible for programming the player’s movement and controls, as well as the enemy movement and AI. Alongside this, I did some level and game design, implementing the breakable blocks and designing level 2.  <br> </p>
+		<p class="headerText"> Role <br></p>
+		<p class="bodyText"> Lead Game Programmer, Gameplay and Level Designer <br> </p>
+		<p class="smallHeaderText">	The game is playable here:<a  href="https://ryanwdev.itch.io/cardboard-kid">Link</a></p>
 	</div>
 	<hr width="100%" color="black" />
 
@@ -70,31 +65,26 @@
 		  <div class="mySlides fade">
 		    <div class="numbertext">1 / 5</div>
 		    <img src="images/CardBoardKidSC.png" style="width:100%">
-		    <div class="text">Main Menu</div>
 		  </div>
 
 		  <div class="mySlides fade">
 		    <div class="numbertext">2 / 5</div>
 		    <img src="images/CardBoardKidSC2.png" style="width:100%">
-		    <div class="text">Level 1</div>
 		  </div>
 
 		  <div class="mySlides fade">
 		    <div class="numbertext">3 / 5</div>
 		    <img src="images/CardBoardKidSC3.png" style="width:100%">
-		    <div class="text">Level 2 with Enemy</div>
 		  </div>
 
 		  <div class="mySlides fade">
 		    <div class="numbertext">4 / 5</div>
 		    <img src="images/CardBoardKidSC4.png" style="width:100%">
-		    <div class="text">Level 3 with Enemies and Barriers</div>
 		  </div>
 
 		  <div class="mySlides fade">
 		    <div class="numbertext">5 / 5</div>
 		    <img src="images/CardBoardKidSC5.png" style="width:100%">
-		    <div class="text">Level 5 Boss Fight</div>
 		  </div>
 
 		  <!-- Next and previous buttons -->
@@ -112,6 +102,9 @@
 		  <span class="dot" onclick="currentSlide(5)"></span>
 		</div>
 	</div>
+
+<!-- Footer -->
+	<div class="footer"></div>
 
 <!-- Code for image Slideshow (Put into JS section l8r) -->
 <script>
