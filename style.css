@@ -7,15 +7,24 @@
   box-sizing:border-box;
 }
 
+.body{
+  background-color: #333133; 
+}
 
 .header {
-  position: sticky;
   top: 0px;
   background-color: #715FA9; 
   list-style-type: none;
   text-align: center;
   margin: 0;
   padding: 0;
+}
+
+.footer{
+  height: 100px;
+  background-color: #250b47; 
+  padding: 0;
+  margin-top: 50px;
 }
 
 .header li{
@@ -97,12 +106,13 @@
 .background{
   padding: 20px;
   background-color: #333133;
+  position: relative;
 }
 
 /* Project Pages */
 .projectTitle{
   padding: 20px;
-  text-align: left;
+  text-align: center;
   background: #333133;
   color: white;
   font-size: 60px;
@@ -110,17 +120,42 @@
 
 .description{
   background: #333133;
-  color: white;
-  font-size: 25px;
-  text-align: left;
+  text-align: center;
   padding: 20px;
-  padding-left: 30px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .projectList{
   text-align: left;
-  font-size: 18px;
-  padding-left: 30px;
+  font-size: 20px;
+  color: #c1bfc8;
+  padding-left: 150px;
+}
+
+.centerVid{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------- */
+/* Generic Text */
+.headerText{
+  font-size: 35px;
+  color: #715FA9;
+  padding: 5px;
+}
+
+.smallHeaderText{
+  font-size: 25px;
+  color: #715FA9;
+  padding: 5px;
+}
+
+.bodyText{
+  font-size: 20px;
+  color: #c1bfc8;
 }
 
 /* Spacial Defense Page */
@@ -139,7 +174,7 @@
 /* Demo Pages */
 .demoDescription{
   background: #333133;
-  color: white;
+  color: #c1bfc8;
   font-size: 20px;
   text-align: left;
   padding: 20px;
@@ -190,7 +225,6 @@
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
 /* Links inside the dropdown */
