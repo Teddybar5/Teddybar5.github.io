@@ -1,84 +1,349 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Jake Preston's Portfolio</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jake Preston – Portfolio</title>
+  <meta name="description" content="Jake Preston - Portfolio Website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e8ef;
+      --muted: #b6b9c6;
+      --accent: #6ee7ff;
+      --border: #222534;
+      --link: #8bdcff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing: border-box }
+    html,body{ height:100% }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{ color: var(--link); text-decoration: none }
+    a:hover{ text-decoration: underline }
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 24px 20px 80px }
+
+    header{
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-top: 12px;
+      margin-bottom: 28px;
+    }
+
+    .avatar{
+      width: 120px; height: 120px;
+      border-radius: 24px;
+      background: #1a1f2b;
+      border: 1px solid var(--border);
+      display: grid; place-items: center; overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .avatar img{ width:100%; height:100%; object-fit: cover }
+
+    .title h1{
+      font-size: clamp(26px, 5vw, 40px);
+      line-height: 1.1;
+      margin: 0 0 6px 0;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .title .sub{ color: var(--muted); font-weight: 600; margin-bottom: 6px }
+
+    .links{
+      display:flex; align-items:center; gap: 14px; flex-wrap: wrap;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px; border-radius: 999px; background: var(--panel);
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .pill svg{ width:18px; height:18px; opacity:.9 }
+
+    section{ margin: 34px 0 }
+    h2{ font-size:30px; letter-spacing: .4px; text-transform: uppercase; color: var(--muted); margin: 0 0 14px 0 }
+    p{ margin: 0 0 12px 0 }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .projects{
+      display: grid; gap: 16px;
+    }
+    .project{
+      display: grid; gap: 16px;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+    }
+
+    .project h3{ margin: 0; font-size: 22px }
+    .meta{ color: var(--muted); font-size: 14px; margin: 2px 0 10px 0 }
+    .actions{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: 10px }
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px; border-radius: 10px; background:#0f1320;
+      border:1px solid var(--border);
+    }
+
+    .slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .slider-track img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    /* Arrows */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .slider-btn.prev { left: 8px; }
+    .slider-btn.next { right: 8px; }
+
+    footer{
+      background: radial-gradient(800px 700px at 50% 0%, #121725 0%, rgba(18, 23, 37, 0) 70%);      padding: 40px 20px;
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px){
+      header{ grid-template-columns: 80px 1fr }
+      .avatar{ width:80px; height:80px; border-radius: 16px }
+      .project{ grid-template-columns: 1fr }
+      .gallery{ grid-template-columns: repeat(3, 1fr) }
+    }
+  </style>
 </head>
-<body class="body">
-<!-- Sticky Header -->
-	<ul class="header">
-		<li><div class="dropdown">
-	  			<button class="dropbtn">Home</button>
-	  			<div class="dropdown-content">
-				    <a href="index.html">Home</a>
-				    <a href="bio.html">About Me</a>
-				   	<a href="https://docs.google.com/document/d/1N08gwHSWWkeCkPUcTzfrXs6HnGHxhWX4eyj6N72wcJQ/edit?tab=t.0">Resume</a>
-		  		</div>
-			</div>
-		</div></li>
-		<li><div class="dropdown">
-	  			<button class="dropbtn">Projects</button>
-	  			<div class="dropdown-content">
-	  				<a href="vibe.html">Gunslinger Breakout</a>
-				    <a href="shift.html">Time Shift</a>
-				    <a href="spacial.html">Spacial Defense</a>				    
-				    <a href="cardboard.html">Cardboard Kid</a>
-		  		</div>
-			</div>
-		</div></li>
-		<li><div class="dropdown">
-	  			<button class="dropbtn">Demos</button>
-	  			<div class="dropdown-content">
-				    <a href="demos.html">Demos</a>
-		  		</div>
-			</div>
-		</div></li>
-		<li><div class="dropdown">
-	  			<button class="dropbtn">Other Design Docs</button>
-	  			<div class="dropdown-content">
-				    <a href="gdd.html">Game Design Docs</a>
-		  		</div>
-			</div>
-		</div></li>
-	</ul>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar">
+        <!-- Headshot -->
+        <img src="images/headshot.png" alt="Your headshot" />
+      </div>
+        <!-- Header -->
+      <div class="title">
+        <h1>Jake Preston</h1>
+        <div class="sub">Gameplay and Systems Designer</div>
+        <div class="links">
+          <a class="pill" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJZcRlLcCcPhbzlBtSfTjpsVslkhrcPqTdwCjlBKlmpdhjVplpQWcfpmxvBrTfFhgdRBRPL" target="_blank" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
+            <span>jaketpreston@gmail.com</span>
+          </a>
+          <a class="pill" href="https://www.linkedin.com/in/jake-preston-10a588251/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4zM8.5 8.5h3.84v2.11h.06c.53-1 1.84-2.11 3.79-2.11 4.05 0 4.8 2.67 4.8 6.15V24h-3.99v-6.84c0-1.63-.03-3.72-2.27-3.72-2.27 0-2.62 1.77-2.62 3.6V24H8.5z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="pill" href="https://docs.google.com/document/d/1N08gwHSWWkeCkPUcTzfrXs6HnGHxhWX4eyj6N72wcJQ/edit?tab=t.0" target="_blank" rel="noopener" aria-label="Resume">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6 2a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16z"/>
+            </svg>
+            <span>Resume</span>
+          </a>
+        </div>
+      </div>
+    </header>
 
-	<!-- Title Page -->
-	<h2 class="title">Jake Preston's Portfolio</h2>
-	<hr width="100%" color="black" />
-	
+    <section class="about card" id="about">
+      <h2>About Me</h2>
+      <p>Hello, I am Jake Preston, a fourth-year student currently studying Immersive Media and Games at Northern Arizona University. I’m a Gameplay and Systems Designer passionate in creating experiences that elicit intense emotions from players. I am also a D1 track and field athlete and just recently transferred from the University of California, Irvine to continue my academic and athletic careers.</p>
+    </section>
 
-	<!-- Skills & Experience Page -->
-	<div class="skills">
-		<h3>Skills and Experience</h3>
-		<ul class="platforms">
-			<li>Unity/C#</li>
-  			<li>MagicaVoxel</li>
-  			<li>HTML/CSS</li>
-		</ul>
-		<ul class="pictures">
-			<li><img src="images/unityLogo.png" alt="Unity Logo" style="width:200px;height:200px;"></li>
-  			<li><img src="images/magicavoxelLogo.png" alt="MagicaVoxel Logo" style="width:200px;height:150px;"></li>
-  			<li><img src="images/htmlLogo.png" alt="MagicaVoxel Logo" style="width:200px;height:200px;"></li>
-		</ul>
-	</div>
-	<hr width="100%" color="black" />
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
 
+      <!-- Project 1 -->
+      <article class="project card">
+        <div>
+          <h3>The Milgram Experiment</h3>
+          <div class="meta">March-August 2025</div>
+          <p>The Milgram Experiment pushes the boundaries on what a game can be. It puts the player through the famous Milgram Experiment and tests how they would react in the face of pleading and helpless citizens. Players take the role of a Patriot Test administrator in a fictional country. NPCs come in and take the test, with the player being instructed to “administer a motivational stimulus” in response to any incorrect answers. The player must decide whether they will submit to authority and cruelly execute innocent civilians, or rebel and potentially save lives. For this project I was the team lead as well as the lead designer. I was in charge of the majority of design decisions and with keeping the project on track. Currently a demo is available with one encounter, although more will be released in the coming months.</p>
+          <div class="actions">
+            <a class="btn" href="https://teddybar5.itch.io/milgram-game" target="_blank" rel="noopener">Demo</a>
+            <a class="btn" href="https://youtu.be/7W-3KFFAsDU" target="_blank" rel="noopener">Intro Video</a>
+          </div>
+        </div>
+        <!-- Slider wrapper -->
+        <div class="slider">
+          <div class="slider-track">
+            <img src="images/MilgramSC1.png" alt="Screenshot 0">
+            <img src="images/MilgramSC0.png" alt="Screenshot 1">
+            <img src="images/MilgramSC2.png" alt="Screenshot 2">
+            <img src="images/MilgramSC3.png" alt="Screenshot 3">
+          </div>
+          <button class="slider-btn prev">&#10094;</button>
+          <button class="slider-btn next">&#10095;</button>
+        </div>
+      </article>
 
-	<!-- Contact Me -->
-	<div class="about">
-		<p><em>Contact</em> <br> <br> </p>
-		<ul class="pictures">
-			<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlKFmVGHdSmVtXbWpPqwrNnKcqdbTXnPNXDGkjMtcRgwbZswNFmBLrwDqQVgJQcZfzDdxq"><img src="images/gmailLogo.png" alt="Gmail Logo" style="width:100px;height:80px;"></a></li>
-			<li><a href="https://www.instagram.com/jjakepreston/"><img src="images/instaLogo.png" alt="Instagram Logo" style="width:100px;height:100px;"></a></li>
-		</ul>
+      <!-- Project 2 -->
+      <article class="project card">
+        <div>
+          <h3>Gunslinger Breakout</h3>
+          <div class="meta">April–August 2024</div>
+          <p>Gunslinger Breakout is an unfinished 3D FPS puzzle game where the player must use a revolver full of bullets with special abilities in order to solve puzzles. The player finds themselves in an abandoned facility and must solve increasingly complex puzzles in order to escape. There are 6 different bullet types available to the player, Cryo, Ricochet, Airburst, Power Charge, Gravity, and Persist. Use any combination of six of these bullets to solve puzzles and escape the facility! For this project I was a gameplay and level designer, implementing and designing all levels. Currently a Demo is available at the link below. </p>
+          <div class="actions">
+            <a class="btn" href="https://leoparagili.itch.io/gunslinger-breakout" target="_blank" rel="noopener">Demo</a>
+            <a class="btn" href="https://docs.google.com/document/d/1tpeWpcpqbxsb2a7q0ZvjhRUll3PIgc2gKQYb2dVaiS8/edit?tab=t.0" target="_blank" rel="noopener">Level Design Breakdown</a>
+          </div>
+        </div>
+        <!-- Slider wrapper -->
+        <div class="slider">
+          <div class="slider-track">
+            <img src="images/gbr1.png" alt="Screenshot 0">
+            <img src="images/gbr2.png" alt="Screenshot 1">
+            <img src="images/gbr3.png" alt="Screenshot 2">
+            <img src="images/gbr4.png" alt="Screenshot 3">
+            <img src="images/gbr5.png" alt="Screenshot 4">
+            <img src="images/gbr6.png" alt="Screenshot 5">
+          </div>
+          <button class="slider-btn prev">&#10094;</button>
+          <button class="slider-btn next">&#10095;</button>
+        </div>
+      </article>
 
-	</div>
+      <!-- Project 3 -->
+      <article class="project card">
+        <div>
+          <h3>Grand Prix</h3>
+          <div class="meta">September–December 2024</div>
+          <p>Grand Prix is a fast-paced strategic card game where players need to strike at the perfect moment to secure the victory. </p>
+          <div class="actions">
+            <a class="btn" href="https://docs.google.com/document/d/1CGBaWAdH7NnrU33wJK64NBblbtJo4bIEiiILYcAmiQg/edit?tab=t.0#heading=h.ok9m4ryt0hd" target="_blank" rel="noopener">Rulebook</a>
+            <a class="btn" href="https://drive.google.com/file/d/1S1hWh-0v6n6fvPlJv-35XDNim53I3c1q/view" target="_blank" rel="noopener">Printsheet</a>
+          </div>
+        </div>
+        <!-- Slider wrapper -->
+        <div class="slider">
+          <div class="slider-track">
+            <img src="images/GrandPrixSC0.png" alt="Screenshot 0">
+            <img src="images/GrandPrixSC1.png" alt="Screenshot 1">
+            <img src="images/GrandPrixSC2.png" alt="Screenshot 2">
+          </div>
+          <button class="slider-btn prev">&#10094;</button>
+          <button class="slider-btn next">&#10095;</button>
+        </div>
+      </article>
 
-	<!-- Footer -->
-	<div class="footer"></div>
+      <!-- Project 4 -->
+      <article class="project card">
+        <div>
+          <h3>Time Shift</h3>
+          <div class="meta">January–April 2024</div>
+          <p>Time shift is a 3D first person puzzle game where the player must travel through time in order to solve puzzles and escape the facility! This game was created as a part of a group project at my previous University, UC Irvine. In this game the player has the ability to travel through time to the future and back to the present. The facility they are in looks different depending on what time they are in, and they must use this to solve puzzles and escape.</p>
+          <div class="actions">
+            <a class="btn" href="https://studio.youtube.com/video/x3VkeJVfJzY/edit" target="_blank" rel="noopener">Walkthrough</a>
+          </div>
+        </div>
+        <!-- Slider wrapper -->
+        <div class="slider">
+          <div class="slider-track">
+            <img src="images/screenshot1.png" alt="Screenshot 1">
+            <img src="images/screenshot2.png" alt="Screenshot 2">
+            <img src="images/screenshot3.png" alt="Screenshot 3">
+          </div>
+          <button class="slider-btn prev">&#10094;</button>
+          <button class="slider-btn next">&#10095;</button>
+        </div>
+      </article>
 
+      <!-- Project 5 -->
+      <article class="project card">
+        <div>
+          <h3>Spacial Defense</h3>
+          <div class="meta">August–June 2023</div>
+          <p>Spacial Defense is a 2.5D Tower Defense game where the player must manage 3 towers with different abilities to prevent waves of enemies from reaching their base. Move towers alongside the enemies in order to beat waves. After certain score milestones players can upgrade their towers. Compete to get a highscore in this arcade style game! I created everything for this game during highscool. I designed and programmed everything in Unity. </p>
+          <div class="actions">
+            <a class="btn" href="https://simmer.io/@Teddybar5/spacialdefense" target="_blank" rel="noopener">Demo</a>
+          </div>
+        </div>
+        <!-- Slider wrapper -->
+        <div class="slider">
+          <div class="slider-track">
+            <img src="images/spacialDefenseSC.png" alt="Screenshot 0">
+            <img src="images/spacialDefenseSC3.png" alt="Screenshot 1">
+            <img src="images/spacialDefenseSC4.png" alt="Screenshot 2">
+            <img src="images/spacialDefenseSC5.png" alt="Screenshot 3">
+            <img src="images/spacialDefenseSC6.png" alt="Screenshot 4">
+          </div>
+          <button class="slider-btn prev">&#10094;</button>
+          <button class="slider-btn next">&#10095;</button>
+        </div>
+      </article>
 
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> JAKE PRESTON</p>
+    </footer>
+  </div>
+
+  <script>
+    // Update year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.slider').forEach(slider => {
+    const track = slider.querySelector('.slider-track');
+    const slides = slider.querySelectorAll('img');
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    let index = 0;
+
+    function updateSlider() {
+      track.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+  });
+</script>
+  </script>
 </body>
 </html>
