@@ -106,6 +106,19 @@
       border:1px solid var(--border);
     }
 
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 ratio */
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
     .slider {
     position: relative;
     overflow: hidden;
@@ -160,7 +173,7 @@
     <header>
       <div class="avatar">
         <!-- Headshot -->
-        <img src="Images/headshot.png" alt="Your headshot" />
+        <img src="images/headshot.png" alt="My headshot" />
       </div>
         <!-- Header -->
       <div class="title">
@@ -187,7 +200,12 @@
 
     <section class="about card" id="about">
       <h2>About Me</h2>
-      <p>Hello, I am Jake Preston, a fourth-year student currently studying Immersive Media and Games at Northern Arizona University. I’m a Gameplay and Systems Designer passionate in creating experiences that elicit intense emotions from players. I have been working as both the lead designer and team lead for many of my most recent projects which has given me a lot of experience managing a team and ensuring productivity. I am also a D1 track and field athlete and just recently transferred from the University of California, Irvine to continue my academic and athletic careers. Although my passion is for design, I have a strong background of Programming. I have been coding in C#, C++ and Java for years on many different projects. While I was primarily the team lead and lead designer on the projects in this portfolio, on every single one I contributed a fair amount of programming as well.</p>
+      <p>Hello, I’m Jake Preston, a fourth-year Immersive Media and Games student at Northern Arizona University, specializing in Gameplay and Systems Design. I’m passionate about creating experiences that elicit powerful emotions in players.
+        <br> <br>
+        In my recent projects, I’ve served as both lead designer and team lead, gaining extensive experience in team management, collaboration, and productivity. While design is my primary focus, I bring a strong programming background in C#, C++, and Java, and I’ve contributed significant coding work on every project I’ve led. I have a wide range of experience in both Unity and Unreal, as well as working in diverse teams with wide ranges of ideas. 
+        <br> <br>
+        Outside of academics, I compete as a Division I track and field athlete, an experience that has strengthened my discipline, leadership, and ability to perform under pressure. I also enjoy spending time outdoors, travelling and exploring new places, and painting in my freetime.
+      </p>
     </section>
 
     <section class="projects" id="projects">
@@ -198,31 +216,32 @@
         <div>
           <h3>The Milgram Experiment</h3>
           <div class="meta">March-August 2025</div>
-          <p>The Milgram Experiment pushes the boundaries on what a game can be. It puts the player through the famous Milgram Experiment and tests how they would react in the face of pleading and helpless citizens. Players take the role of a Patriot Test administrator in a fictional country. NPCs come in and take the test, with the player being instructed to “administer a motivational stimulus” in response to any incorrect answers. The player must decide whether they will submit to authority and cruelly execute innocent civilians, or rebel and potentially save lives. For this project I was the team lead as well as the lead designer. I was in charge of the majority of design decisions and with keeping the project on track. Currently a demo is available with one encounter, although more will be released in the coming months.</p>
+          <p>The Milgram Experiment explores the boundaries of what a game can be, immersing players in a reimagining of the famous psychological study. Players step into the role of a Patriot Test administrator in a fictional country, tasked with “administering a motivational stimulus” whenever NPCs answer incorrectly. As citizens plead for mercy, players must decide whether to obey authority and carry out cruel executions, or resist and save lives.
+            <br> I served as both team lead and lead designer on this project, overseeing the core vision, directing design decisions, and ensuring the team stayed on track. While currently available as a one-encounter demo, the game is in active development, with additional scenarios planned for release in the coming months. </p>
           <div class="actions">
             <a class="btn" href="https://teddybar5.itch.io/milgram-game" target="_blank" rel="noopener">Demo</a>
             <a class="btn" href="https://youtu.be/7W-3KFFAsDU" target="_blank" rel="noopener">Intro Video</a>
           </div>
         </div>
-        <!-- Slider wrapper -->
-        <div class="slider">
-          <div class="slider-track">
-            <img src="Images/MilgramSC1.png" alt="Screenshot 0">
-            <img src="Images/MilgramSC0.png" alt="Screenshot 1">
-            <img src="Images/MilgramSC2.png" alt="Screenshot 2">
-            <img src="Images/MilgramSC3.png" alt="Screenshot 3">
+        <!-- Video embed -->
+        <div class="video-wrapper">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/r4fXzZpCDSY"
+                    title="Milgram Experiment Gameplay Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
           </div>
-          <button class="slider-btn prev">&#10094;</button>
-          <button class="slider-btn next">&#10095;</button>
         </div>
-      </article>
-
+      </article>  
       <!-- Project 2 -->
       <article class="project card">
         <div>
           <h3>Gunslinger Breakout</h3>
           <div class="meta">April–August 2024</div>
-          <p>Gunslinger Breakout is an unfinished 3D FPS puzzle game where the player must use a revolver full of bullets with special abilities in order to solve puzzles. The player finds themselves in an abandoned facility and must solve increasingly complex puzzles in order to escape. There are 6 different bullet types available to the player, Cryo, Ricochet, Airburst, Power Charge, Gravity, and Persist. Use any combination of six of these bullets to solve puzzles and escape the facility! For this project I was a gameplay and level designer, implementing and designing all levels. Currently a Demo is available at the link below. </p>
+          <p>Gunslinger Breakout is a 3D FPS puzzle game built around a revolver loaded with special ability bullets. Players can choose from six unique types—Cryo, Ricochet, Airburst, Power Charge, Gravity, and Persist—and combine them to solve increasingly complex puzzles inside an abandoned facility.
+          <br> On this project, I worked as a gameplay and level designer, creating and implementing all of the game’s levels and ensuring each puzzle showcased the unique mechanics. A demo is currently available at the link below.   </p>
           <div class="actions">
             <a class="btn" href="https://leoparagili.itch.io/gunslinger-breakout" target="_blank" rel="noopener">Demo</a>
             <a class="btn" href="https://docs.google.com/document/d/1tpeWpcpqbxsb2a7q0ZvjhRUll3PIgc2gKQYb2dVaiS8/edit?tab=t.0" target="_blank" rel="noopener">Level Design Breakdown</a>
@@ -231,12 +250,12 @@
         <!-- Slider wrapper -->
         <div class="slider">
           <div class="slider-track">
-            <img src="Images/gbr1.png" alt="Screenshot 0">
-            <img src="Images/gbr2.png" alt="Screenshot 1">
-            <img src="Images/gbr3.png" alt="Screenshot 2">
-            <img src="Images/gbr4.png" alt="Screenshot 3">
-            <img src="Images/gbr5.png" alt="Screenshot 4">
-            <img src="Images/gbr6.png" alt="Screenshot 5">
+            <img src="images/gbr1.png" alt="Screenshot 0">
+            <img src="images/gbr2.png" alt="Screenshot 1">
+            <img src="images/gbr3.png" alt="Screenshot 2">
+            <img src="images/gbr4.png" alt="Screenshot 3">
+            <img src="images/gbr5.png" alt="Screenshot 4">
+            <img src="images/gbr6.png" alt="Screenshot 5">
           </div>
           <button class="slider-btn prev">&#10094;</button>
           <button class="slider-btn next">&#10095;</button>
@@ -246,9 +265,33 @@
       <!-- Project 3 -->
       <article class="project card">
         <div>
+          <h3>Time Shift</h3>
+          <div class="meta">January–April 2024</div>
+          <p>Time shift is a 3D first-person puzzle game where the player must travel through time in order to solve puzzles and escape the facility! This game was created as a part of a group project at my previous University, UC Irvine. In this game the player has the ability to travel through time to the future and back to the present. The facility they are in looks different depending on what time they are in, and they must use this to solve puzzles and escape.</p>
+          <div class="actions">
+            <a class="btn" href="https://studio.youtube.com/video/x3VkeJVfJzY/edit" target="_blank" rel="noopener">Walkthrough</a>
+          </div>
+        </div>
+        <!-- Slider wrapper -->
+        <div class="video-wrapper">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/x3VkeJVfJzY"
+                    title="Time Shift Walkthrough Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project card">
+        <div>
           <h3>Grand Prix</h3>
           <div class="meta">September–December 2024</div>
-          <p>Grand Prix is a fast-paced strategic card game where players need to strike at the perfect moment to secure the victory. Players must use their cards to beat everyone in consecutive 1v1 races, spending resources they have gained strategically to ensure victory. Grand Prix combines bluffing aspects of games like Coup and Liar’s dice with the timeless classic War. I was the team lead and lead designer for this card game. I really wanted to create a game where players had some incentive to “punt” or cut their losses since I believe this is a very under used game mechanic. </p>
+          <p>Grand Prix is a fast-paced strategic card game where players need to strike at the perfect moment to secure the victory. Players must use their cards to beat everyone in consecutive 1v1 races, spending resources they have gained strategically to ensure victory. Grand Prix combines bluffing aspects of games like Coup and Liar’s Dice with the timeless classic War. 
+            <br>I was the team lead and lead designer for this card game. I wanted to create a game where players had some incentive to “punt” or cut their losses since I believe this is a very under used game mechanic.</p>
           <div class="actions">
             <a class="btn" href="https://docs.google.com/document/d/1CGBaWAdH7NnrU33wJK64NBblbtJo4bIEiiILYcAmiQg/edit?tab=t.0#heading=h.ok9m4ryt0hd" target="_blank" rel="noopener">Rulebook</a>
             <a class="btn" href="https://drive.google.com/file/d/1S1hWh-0v6n6fvPlJv-35XDNim53I3c1q/view" target="_blank" rel="noopener">Printsheet</a>
@@ -257,32 +300,9 @@
         <!-- Slider wrapper -->
         <div class="slider">
           <div class="slider-track">
-            <img src="Images/GrandPrixSC0.png" alt="Screenshot 0">
-            <img src="Images/GrandPrixSC1.png" alt="Screenshot 1">
-            <img src="Images/GrandPrixSC2.png" alt="Screenshot 2">
-          </div>
-          <button class="slider-btn prev">&#10094;</button>
-          <button class="slider-btn next">&#10095;</button>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article class="project card">
-        <div>
-          <h3>Time Shift</h3>
-          <div class="meta">January–April 2024</div>
-          <p>Time shift is a 3D first person puzzle game where the player must travel through time in order to solve puzzles and escape the facility! This game was created as a part of a group project at my previous University, UC Irvine. In this game the player has the ability to travel through time to the future and back to the present. The facility they are in looks different depending on what time they are in, and they must use this to solve puzzles and escape.</p>
-          <div class="actions">
-            <a class="btn" href="https://youtu.be/x3VkeJVfJzY" target="_blank" rel="noopener">Walkthrough</a>
-          </div>
-        </div>
-        <!-- Slider wrapper -->
-        <div class="slider">
-          <div class="slider-track">
-            <img src="TimeShiftSC0.png" alt="Screenshot 0">
-            <img src="TimeShiftSC1.png" alt="Screenshot 1">
-            <img src="TimeShiftSC2.png" alt="Screenshot 2">
-            <img src="TimeShiftSC3.png" alt="Screenshot 3">
+            <img src="images/GrandPrixSC0.png" alt="Screenshot 0">
+            <img src="images/GrandPrixSC1.png" alt="Screenshot 1">
+            <img src="images/GrandPrixSC2.png" alt="Screenshot 2">
           </div>
           <button class="slider-btn prev">&#10094;</button>
           <button class="slider-btn next">&#10095;</button>
@@ -294,7 +314,7 @@
         <div>
           <h3>Spacial Defense</h3>
           <div class="meta">August–June 2023</div>
-          <p>Spacial Defense is a 2.5D Tower Defense game where the player must manage 3 towers with different abilities to prevent waves of enemies from reaching their base. Move towers alongside the enemies in order to beat waves. After certain score milestones players can upgrade their towers. Compete to get a highscore in this arcade style game! I created everything for this game during highscool. I designed and programmed everything in Unity. </p>
+          <p>Spacial Defense is a 2.5D Tower Defense game where the player must manage 3 towers with different abilities to prevent waves of enemies from reaching their base. Move towers alongside the enemies in order to beat waves. After certain score milestones players can upgrade their towers. Compete to get a highscore in this arcade style game! I created everything for this game during high school. I designed and programmed everything in Unity. </p>
           <div class="actions">
             <a class="btn" href="https://simmer.io/@Teddybar5/spacialdefense" target="_blank" rel="noopener">Demo</a>
           </div>
@@ -302,11 +322,11 @@
         <!-- Slider wrapper -->
         <div class="slider">
           <div class="slider-track">
-            <img src="Images/spacialDefenseSC.png" alt="Screenshot 0">
-            <img src="Images/spacialDefenseSC3.png" alt="Screenshot 1">
-            <img src="Images/spacialDefenseSC4.png" alt="Screenshot 2">
-            <img src="Images/spacialDefenseSC5.png" alt="Screenshot 3">
-            <img src="Images/spacialDefenseSC6.png" alt="Screenshot 4">
+            <img src="images/spacialDefenseSC.png" alt="Screenshot 0">
+            <img src="images/spacialDefenseSC3.png" alt="Screenshot 1">
+            <img src="images/spacialDefenseSC4.png" alt="Screenshot 2">
+            <img src="images/spacialDefenseSC5.png" alt="Screenshot 3">
+            <img src="images/spacialDefenseSC6.png" alt="Screenshot 4">
           </div>
           <button class="slider-btn prev">&#10094;</button>
           <button class="slider-btn next">&#10095;</button>
@@ -348,10 +368,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
