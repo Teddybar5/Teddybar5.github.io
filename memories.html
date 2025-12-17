@@ -1,31 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Memories From Home – Project</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  body { background:#0b0c0f; color:#e6e8ef; font-family:Inter; padding:20px; }
-  a{ color:#8bdcff; text-decoration:none; }
-  .back{ display:inline-block; margin-bottom:20px; }
-  .video-container{ position:relative; width:100%; padding-top:56.25%; }
-  .video-container iframe{ position:absolute; inset:0; width:100%; height:100%; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memories From Home – Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e8ef;
+      --muted: #b6b9c6;
+      --accent: #6ee7ff;
+      --border: #222534;
+      --link: #8bdcff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 900px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.6;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:24px;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    h1{
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 12px 0;
+      font-weight:800;
+    }
+
+    h2{
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    p{ margin: 0 0 12px 0; }
+
+    .meta{
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    section{ margin-bottom: 28px; }
+
+    .video-container{
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .video-container iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:#0f1320;
+      border:1px solid var(--border);
+      font-weight:600;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<a href="index.html" class="back">← Back to Portfolio</a>
+    <a href="index.html" class="back">← Back to Portfolio</a>
 
-<h1>Memories From Home</h1>
-<p>
-Memories From Home is an emotional narrative experience built for the Jacksepticeye Game Jam 2025 under the theme “death is an opportunity.”  
-<br><br>
-I developed the entire project solo in 3 days — code, design, sound, and core experience — using free assets only for visuals. I plan to expand this concept further in the future.
-</p>
+    <!-- Overview -->
+    <section class="card">
+      <h1>Overview</h1>
+      <div class="meta">October 2025 · Unity 3D</div>
+      <p>
+        <strong>Memories From Home</strong> is narrative experience
+        created for the <strong>Jamsepticeye Game Jam 2025</strong> with the
+        theme <em>“death is an opportunity.”</em> The project explores grief,
+        memory, and reconnection through quiet, reflective interaction.
+      </p>
+      <p>
+        Upon hearing the theme I wanted to created something unique so I focused on 
+        death as an opportunity to reconnect with your family and loved ones. Partially inspired
+        by the game "unpacking", the player returns to their childhoom home aftr the passing of their parents
+        and unpacks boxes filled with mementos and memories. Each item triggers a short narrative vignette that
+        reveals something about the family and their relationships.
+      </p>
+    </section>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/K4GCCxPOX40" allowfullscreen></iframe>
-</div>
+    <!-- Solo Development -->
+    <section class="card">
+      <h2>Solo Development</h2>
+      <p>
+        This was a <strong>fully solo project</strong> developed in just
+        <strong>three days</strong>. I handled all aspects of production,
+        including gameplay design, programming, sound design, and overall
+        narrative structure.
+      </p>
+      <p>
+        Visual assets were sourced from free libraries, allowing me to focus
+        entirely on pacing, tone, and emotional impact. I built the full level including all the 
+        effects, interactions, and narrative scripting in Unity. The majority of my time over the jam was
+        spent refining the writing and placement of objects to create an engaging experience and an 
+        impactful story. I believe this project showcases my ability to create meaningful experiences
+        through thoughtful design and storytelling.
+      </p>
+    </section>
 
+    <!-- Gameplay Video -->
+    <section class="card">
+      <h2>Gameplay Footage</h2>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/K4GCCxPOX40"
+          title="Memories From Home Gameplay"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>
