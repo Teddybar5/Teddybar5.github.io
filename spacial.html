@@ -1,49 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Spacial Defense – Project</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  body{ background:#0b0c0f; color:#e6e8ef; font-family:Inter; padding:20px; }
-  a{ color:#8bdcff; }
-  .back{ display:inline-block; margin-bottom:20px; }
-  .slider{ position:relative; overflow:hidden; border:1px solid #222534; border-radius:12px; }
-  .slider-track{ display:flex; transition:.3s; }
-  .slider-track img{ width:100%; object-fit:cover; flex-shrink:0; }
-  .slider-btn{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.4); color:white; border:none; padding:8px 12px; cursor:pointer; }
-  .prev{ left:10px;} .next{ right:10px;}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spacial Defense – Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e8ef;
+      --muted: #b6b9c6;
+      --accent: #6ee7ff;
+      --border: #222534;
+      --link: #8bdcff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 900px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.6;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:24px;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    h1{
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 12px 0;
+      font-weight:800;
+    }
+
+    h2{
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    p{ margin: 0 0 12px 0; }
+
+    .meta{
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    section{ margin-bottom: 28px; }
+
+    /* Slider */
+    .slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:12px;
+      border:1px solid var(--border);
+    }
+
+    .slider-track{
+      display:flex;
+      transition: transform .3s ease;
+    }
+
+    .slider-track img{
+      width:100%;
+      flex-shrink:0;
+      object-fit:cover;
+    }
+
+    .slider-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.4);
+      border:none;
+      color:white;
+      font-size:22px;
+      padding:8px 12px;
+      cursor:pointer;
+    }
+
+    .slider-btn.prev{ left:10px; }
+    .slider-btn.next{ right:10px; }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:#0f1320;
+      border:1px solid var(--border);
+      font-weight:600;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<a href="index.html" class="back">← Back to Portfolio</a>
+    <a href="index.html" class="back">← Back to Portfolio</a>
 
-<h1>Spacial Defense</h1>
-<p>
-Spacial Defense is a 2.5D tower defense game where players manage 3 towers with unique abilities to defeat waves of enemies and earn upgrades. I created this game entirely in high school — design, programming, systems, and gameplay.
-</p>
+    <!-- Overview -->
+    <section class="card">
+      <h1>Spacial Defense</h1>
+      <div class="meta">August 2022 – June 2023 · 2.5D Tower Defense</div>
+      <p>
+        <strong>Spacial Defense</strong> is a 2.5D tower defense game where players
+        manage three towers with unique abilities to stop waves of enemies before
+        they reach the base. Towers can be repositioned alongside enemy paths,
+        and strategic upgrades unlock as players push for higher scores.
+      </p>
+    </section>
 
-<div class="slider">
-  <div class="slider-track">
-    <img src="images/spacialDefenseSC.png">
-    <img src="images/spacialDefenseSC3.png">
-    <img src="images/spacialDefenseSC4.png">
-    <img src="images/spacialDefenseSC5.png">
-    <img src="images/spacialDefenseSC6.png">
+    <!-- Early Development Focus -->
+    <section class="card">
+      <h2>Solo Development & Systems Design</h2>
+      <p>
+        This project was created <strong>entirely solo during high school</strong>.
+        I handled all aspects of development, including game design, programming,
+        systems design, UI, and moment-to-moment gameplay tuning.
+      </p>
+      <p>
+        Spacial Defense represents my first fully realized game project and laid
+        the foundation for my interest in gameplay systems, difficulty curves,
+        and player-driven strategy.
+      </p>
+
+      <div class="actions">
+        <a class="btn" href="https://simmer.io/@Teddybar5/spacialdefense" target="_blank" rel="noopener">Play Demo</a>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="card">
+      <h2>Game Screenshots</h2>
+      <div class="slider">
+        <div class="slider-track">
+          <img src="Images/spacialDefenseSC.png" alt="Spacial Defense screenshot 1">
+          <img src="Images/spacialDefenseSC3.png" alt="Spacial Defense screenshot 2">
+          <img src="Images/spacialDefenseSC4.png" alt="Spacial Defense screenshot 3">
+          <img src="Images/spacialDefenseSC5.png" alt="Spacial Defense screenshot 4">
+          <img src="Images/spacialDefenseSC6.png" alt="Spacial Defense screenshot 5">
+        </div>
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
+    </section>
+
   </div>
-  <button class="slider-btn prev">&#10094;</button>
-  <button class="slider-btn next">&#10095;</button>
-</div>
 
-<script>
-const tr=document.querySelector('.slider-track');
-const sl=document.querySelectorAll('.slider-track img');
-let id=0;
-function up(){ tr.style.transform=`translateX(${-id*100}%)`; }
-document.querySelector('.next').onclick=()=>{ id=(id+1)%sl.length; up(); }
-document.querySelector('.prev').onclick=()=>{ id=(id-1+sl.length)%sl.length; up(); }
-</script>
+  <script>
+    const slider = document.querySelector('.slider');
+    const track = slider.querySelector('.slider-track');
+    const slides = slider.querySelectorAll('img');
+    const prev = slider.querySelector('.prev');
+    const next = slider.querySelector('.next');
+
+    let index = 0;
+
+    function update(){
+      track.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    next.onclick = () => {
+      index = (index + 1) % slides.length;
+      update();
+    };
+
+    prev.onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    };
+  </script>
 
 </body>
 </html>
