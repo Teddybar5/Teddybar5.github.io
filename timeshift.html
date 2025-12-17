@@ -1,29 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Time Shift – Project</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  body { background:#0b0c0f; color:#e6e8ef; font-family:Inter; margin:0; padding:20px; }
-  a { color:#8bdcff; text-decoration:none; }
-  .back { display:inline-block; margin-bottom:20px; }
-  .video-container{ position:relative; width:100%; padding-top:56.25%; }
-  .video-container iframe{ position:absolute; top:0; left:0; width:100%; height:100%; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Time Shift – Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e8ef;
+      --muted: #b6b9c6;
+      --accent: #6ee7ff;
+      --border: #222534;
+      --link: #8bdcff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 900px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.6;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:24px;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    h1{
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 12px 0;
+      font-weight:800;
+    }
+
+    h2{
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    p{ margin: 0 0 12px 0; }
+
+    .meta{
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    section{ margin-bottom: 28px; }
+
+    .video-container{
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .video-container iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:#0f1320;
+      border:1px solid var(--border);
+      font-weight:600;
+    }
+    /* Split layout for cards */
+    .split{
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .split img{
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    /* Stack on mobile */
+    @media (max-width: 768px){
+      .split{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<a href="index.html" class="back">← Back to Portfolio</a>
+    <a href="index.html" class="back">← Back to Portfolio</a>
 
-<h1>Time Shift</h1>
-<p>
-Time Shift is a 3D first-person puzzle game built at UC Irvine, where players travel through time to solve puzzles. The facility changes between present and future timelines, forcing players to think creatively between states.
-</p>
+    <!-- Overview -->
+    <section class="card">
+      <h1>Time Shift</h1>
+      <div class="meta">January–April 2024 · 3D First-Person Puzzle Game</div>
+      <p>
+        <strong>Time Shift</strong> is a 3D first-person puzzle game developed as
+        part of a group project at <strong>UC Irvine</strong>. Players must travel
+        between the present and future to manipulate the environment and solve
+        increasingly complex puzzles.
+      </p>
+    </section>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/x3VkeJVfJzY" allowfullscreen></iframe>
-</div>
+    <!-- Level Focus -->
+    <section class="card">
+      <h2>Level Design</h2>
+      <p>
+        As sole level designer I was tasked with developing an interesting game with just the time shifting mechanics. As 
+        this game was for a class, we wanted to create a powerful vertical slice that we could present in a few months time. 
+      </p>
+      <p>
+        The game starts the player in a cell covered in “wall scrawls” that tell the player to right click the mouse to “shift” times, 
+        and the only way to progress is by “shifting” time to the future. This teaches the player the mechanics of time shifting as 
+        early as possible, and shows that obstacles, even walls, need to be overcome by “shifting” time. It also improves immersion 
+        since there are no menus that pop up to demonstrate this to the player. It forces the player to learn by doing, which in my 
+        experience, is the best way to learn something.
+      </p>
+      <!--Picture/video of the first puzzle-->
+      <p>
+        The next puzzle demonstrates the next mechanic of the present affecting the future. The player needs to get up to a ledge in
+         the future world but can’t because the block they can climb on is behind a wall. This wall is not in the present, however, so 
+         the player must realize they can move the block in the present and “shift” back into the future to move onto the next section.
+      </p>
+      <!--Picture/video of the second puzzle-->
+      <p>
+        The next section is a succession of puzzles that build complexity on these mechanics. Below is a video walkthrough of the 
+        successive puzzles that lead towards the main room. This game is unfinished as it was created primarily for a class project.
+      </p>
+      <!--Video of this-->
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/x3VkeJVfJzY"
+          title="Time Shift Gameplay Walkthrough"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Design Focus -->
+    <section class="card">
+      <h2>Gameplay Design</h2>
+      <p>
+        While the gameplay itself is fairly simple, just shifting times back and forth, the game is not that simple.
+         I wanted to develop an interesting advancement of this concept, so I implemented a mechanic that allows the
+          present to affect the future. This allowed puzzles to become much more 3 dimensional which was not possible
+           when the only mechanic was travelling between the times. I did this to avoid “lock and key” puzzles where 
+           the answers were linear and only required one action to move towards the next puzzle.
+      </p>
+      <!--Picture?-->
+      <p>
+        An example of this is the very first puzzle, where the player must move a block in the present to an area that 
+        is walled off in the future but where the player can still access by shifting times. This allows the player to
+         move onto the next section and takes 3 actions to pass the puzzle, instead of just 1. 
+      </p>
+      <!--Video of this!-->
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/x3VkeJVfJzY"
+          title="Time Shift Gameplay Walkthrough"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Production Focus -->
+    <section class="card">
+      <h2>Production</h2>
+
+      <div class="split">
+        <!-- Text -->
+        <div>
+          <p>
+            As team lead, I was responsible for task planning, delegation, and progress
+            tracking using a shared Google Sheet. Despite the small team size, maintaining
+            organization was critical to keeping development on schedule.
+          </p>
+          <p>
+            I held two weekly meetings: one to assign tasks and set goals, and another to
+            review progress and adjust workloads as needed. This structure allowed the team
+            to remain flexible while balancing the constraints of a student schedule.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <img src="Images/timeShiftSheet.png" alt="Time Shift production planning and development">
+      </div>
+    </section>
 
 </body>
 </html>
