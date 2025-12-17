@@ -1,31 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>EX-Traterrestrial – Project</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  body { background:#0b0c0f; color:#e6e8ef; font-family:Inter, sans-serif; margin:0; padding:20px; }
-  a { color:#8bdcff; text-decoration:none; }
-  .back { display:inline-block; margin-bottom:20px; }
-  .video-container{ position:relative; width:100%; padding-top:56.25%; }
-  .video-container iframe{ position:absolute; top:0; left:0; width:100%; height:100%; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EX-Traterrestrial – Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e8ef;
+      --muted: #b6b9c6;
+      --accent: #6ee7ff;
+      --border: #222534;
+      --link: #8bdcff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 900px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.6;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:24px;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    h1{
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 12px 0;
+      font-weight:800;
+    }
+
+    h2{
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    p{ margin: 0 0 12px 0; }
+
+    .meta{
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    section{ margin-bottom: 28px; }
+
+    .video-container{
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .video-container iframe{
+      position:absolute;
+      top:0; left:0;
+      width:100%;
+      height:100%;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:#0f1320;
+      border:1px solid var(--border);
+      font-weight:600;
+    }
+
+    /* Split layout for text + media */
+    .split{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;               /* closer to the text */
+      align-items: start;
+    }
+
+    /* Small side image */
+    .side-img{
+      width: 280px;            /* slightly bigger */
+      max-width: 45vw;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    /* Stack on mobile */
+    @media (max-width: 768px){
+      .split{
+        grid-template-columns: 1fr;
+      }
+      .side-img{
+        width: 100%;
+        max-width: 100%;
+        margin-top: 8px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<a href="index.html" class="back">← Back to Portfolio</a>
+    <a href="index.html" class="back">← Back to Portfolio</a>
 
-<h1>EX-Traterrestrial</h1>
-<p>
-EX-Traterrestrial was the winning submission to the 2025 Uniting the Valley AZ Game Cup. Over two days, my team and I built the entire game and competed against 9 other teams from 5 universities.
-<br><br>
-As team lead, I delegated tasks, established the core loop, maintained a unified vision, and ensured zero merge conflicts during rapid development. I also pitched the game to the judges, helping our team secure the win.
-</p>
+    <!-- Title / Overview -->
+    <section class="card">
+      <h1>EX-Traterrestrial</h1>
+      <div class="meta">November 2025 · Unity 3D</div>
+      <p>
+        <strong>EX-Traterrestrial</strong> was the winning submission to the
+        <strong>2025 Uniting the Valley AZ Game Cup</strong>. Over the course of
+        just two days, my team and I developed the entire game and competed
+        against nine other teams from five universities. The theme for the jam was "Creepy", 
+        and we were provided all the art assets and were tasked with building a game around them.
+      </p>
+    </section>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/H0Ieh5kTyJI" allowfullscreen></iframe>
-</div>
+    <!-- Content Design -->
+    <section class="card">
+      <h2>Content Design</h2>
+      <p>
+        The theme for this game jam was “Creepy”. My very first thought when I saw this theme was “what if YOU are the creep”.
+         I brought this idea to my group and our initial concept from this was a game where you play as a creepy stalker in a 
+         stealth game and go from streetlamp to streetlamp stalking someone, only you don’t realize you are stalking them at 
+         first, this would be revealed at the end. 
+      </p>
+      <!-- diagram of what the game would've been here -->
+       <img
+        src="Images/temp.png"
+        alt="Critical path layout through the level"
+        style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
+      >
+      <p>
+        One of the challenges with the game jam, however, was that we were required to use only the provided assets and make 
+        nothing outside of the unity engine. This provided an interesting challenge as a lot of the assets were of the interior
+        of a spooky house. This gave me the idea for a home-invasion stealth game similar to Hello Neighbor, but the player 
+       doesn’t know they’re in the wrong until the reveal at the end. From this Ex-Traterrestrial was born. The player takes
+        the role of an obsessive ex boyfriend who doesn’t believe his relationship has ended. He sees his ex-girlfriend walking
+       home with her new boyfriend, but because of his delusional state convinces himself that this is actually an alien 
+        that has abducted her and taken over her home. You must sneak around the house avoiding the alien to save your ex-girlfriend, 
+        only for your delusions to be shattered at the end when you finally talk to her.
+      </p>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/H0Ieh5kTyJI"
+          title="EX-Traterrestrial Gameplay"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Level Design -->
+    <section class="card">
+      <h2>Level Design</h2>
+
+      <p>
+        Due to the restriction of only using the provided assets we needed to get creative when developing the level. 
+        I used the assets in creative ways to represent a house that looked like it was part alien spaceship. The house
+        looked more alien the further into it you got to demonstrate the player character’s delusion increasing the deeper he gets. 
+      </p>
+
+      <!-- Screenshots of the level -->
+      <img
+        src="Images/temp.png"
+        alt="Level overview showing alien-inspired house environment"
+        style="width:100%; border-radius:12px; border:1px solid var(--border); margin:12px 0;"
+      >
+
+      <!-- Second block with smaller image to the side -->
+    <div class="split">
+      <div>
+        <p>
+          Another important decision I made was the placement of the alien. I wanted to show it to the player early while also
+          pointing them in the correct direction for progression. That is why I put the alien right there. 
+        </p>
+      </div>
+
+      <img
+        class="side-img"
+        src="Images/temp.png"
+        alt="Alien placement guiding player progression"
+      >
+    </div>
+
+      <p>
+        This causes the alien to walk towards the player when the game first starts right after they pass a table that they can hide 
+        under, so they instinctively run back and hide under the table. This teaches them the core mechanic right away. Afterwards 
+        the alien walks back towards the bathroom, encouraging the player to go the opposite direction towards the end door, which 
+        is the way to progress the game. After they find the end door for the first time keys will be spawned from a random list of 
+        curated spots. The critical path is as follows:
+      </p>
+      <!-- Screenshot of the critical path -->
+      <img
+        src="Images/temp.png"
+        alt="Critical path layout through the level"
+        style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
+      >
+    </section>
 
 </body>
 </html>
