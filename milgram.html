@@ -1,32 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>The Milgram Experiment – Project</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  body { background:#0b0c0f; color:#e6e8ef; font-family:Inter, sans-serif; margin:0; padding:20px; line-height:1.6; }
-  a { color:#8bdcff; text-decoration:none; }
-  .back { display:inline-block; margin-bottom:20px; }
-  h1 { margin-top:0; }
-  .video-container{ position:relative; width:100%; padding-top:56.25%; }
-  .video-container iframe{ position:absolute; top:0; left:0; width:100%; height:100%; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Milgram Experiment – Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e8ef;
+      --muted: #b6b9c6;
+      --accent: #6ee7ff;
+      --border: #222534;
+      --link: #8bdcff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 900px;
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.6;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:24px;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    h1{
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 12px 0;
+      font-weight:800;
+    }
+
+    h2{
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    p{ margin: 0 0 12px 0; }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    section{ margin-bottom: 28px; }
+
+    .meta{
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .video-container{
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .video-container iframe{
+      position:absolute;
+      top:0; left:0;
+      width:100%;
+      height:100%;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:#0f1320;
+      border:1px solid var(--border);
+      font-weight:600;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<a href="index.html" class="back">← Back to Portfolio</a>
+    <a href="index.html" class="back">← Back to Portfolio</a>
 
-<h1>The Milgram Experiment</h1>
-<p>
-The Milgram Experiment explores the boundaries of what a game can be, immersing players in a reimagining of the famous psychological study. Players step into the role of a Patriot Test administrator in a fictional country, tasked with “administering a motivational stimulus” whenever NPCs answer incorrectly.
-<br><br>
-I served as both team lead and lead designer, overseeing the core vision, directing design decisions, and guiding the team through development. While currently available as a one-encounter demo, the game is in active development with additional scenarios planned.
-</p>
+    <!-- Title Card -->
+    <section class="card">
+      <h1>Overview</h1>
+      <div class="meta">March–August 2025 · Unreal Engine 5</div>
+      <p>
+      Milgram Experiment is a <strong>first-person, 3D psychological horror puzzle game</strong> in which players must fight the system in order to succeed. 
+      Players assume the role of a Patriot Test administrator in a fictional authoritarian state, tasked with determining whether citizens 
+      are loyal or if they need to be motivated through a brutal electric shock. Originally developed for a horror games course, the project 
+      has continued beyond the class. I served as team lead and lead designer, contributing across design, narrative, programming, level 
+      creation, and production.
+      </p>
+      <p>
+        The game is currently available as a one-encounter demo, with additional scenarios actively in development and planned for future release.
+      </p>
+    </section>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/r4fXzZpCDSY" allowfullscreen></iframe>
-</div>
+    <!-- Design -->
+    <section class="card">
+      <h2>Content Design</h2>
+      <p>
+        As lead designer, I defined the game’s core vision and tone. Rather than relying on jump scares, the experience focuses on 
+        psychological horror inspired by the real-world Milgram Experiment. The game challenges players to confront their own complicity:
+         victory is only possible by refusing to harm innocent participants and rebelling against the game’s rules. 
+      </p>
+      <!-- picture -->
+      <p>
+        To hammer this theme home I developed a shadow that slowly grows in the corner of the player’s room. At first it is not noticed, 
+        but as the player continues to disobey it grows and subtly chants “obey” to sow doubt in the player and to demonstrate the power
+         that authoritative figures have.       
+      </p>
+      <!-- picture -->
+      <p>
+        A lot of inspiration was taken from the original Milgram experiment, however the questions and themes could not be taken. 
+        I wanted to provide in-universe reasons for such a cruel test to exist and to allow players to justify their cruelty, even if 
+        that would ultimately lead them towards the bad ending. 
+      </p>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/r4fXzZpCDSY"
+          title="The Milgram Experiment Gameplay"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
 
+    <section class="card">
+      <h2>Level Design</h2>
+      <p>
+        I designed and implemented the entire environment and lighting. The setting was inspired by Soviet-era scientific facilities, 
+        using curated assets alongside custom props created by a team artist, which I integrated and refined in-engine. I received assets
+         from the artists on my team and implemented them myself, adjusting materials and lighting to ensure visual cohesion.
+      </p>
+      <!-- picture -->
+      <p>
+        Animation and lighting played a critical role in curating the atmosphere. Rather than showing NPC entrances directly, 
+        I implemented heavy steel doors to conceal movement and heighten tension. I collaborated with another designer on NPC animations 
+        during questioning and punishment sequences. Lighting was carefully composed to focus attention on the test subject, using a 
+        single overhead spotlight, while darker corners of the room emphasize the presence of the emerging entity.
+      </p>
+      <!-- picture -->
+    </section>
+
+    <section class="card">
+      <h2>Production</h2>
+      <p>
+        As team lead I was in charge of managing a team of 5 others to get the project finished on time. We had a short deadline of
+         2 months from when we started the project since it was due at the end of the class. I used a google doc to manage tasks and 
+         held weekly meetings to go over progress updates and delegate upcoming tasks. Rather than push the team using sprints and a 
+         more structured development process, I worked around everyone’s busy schedules and if one person had a particularly busy 
+         week their workload would be divided between me and anyone else with lighter weeks. This allowed us to stay on track and get a polished build finished by the end of the class that was ready to present and submit. 
+      </p>
+        <!-- picture -->
+      <p>
+        I did spend 11 hours straight fighting unreal for a functional build, but that was the day before it was due since I had the
+         wherewithal to build early, although I wish I had done so even earlier to avoid the 11 hour battle. 
+      </p>
+
+    </section>
+
+    <section class="card">
+      <h2>UI</h2>
+      <p>
+        I created all of the UI for the game. I wanted the UI to feel like it was part of the game world to increase immersion, so I designed 
+        the TV pause menu. When you click on the TV it rolls up towards you and a menu is displayed on the screen. This allows the player to adjust
+        settings or quit to menu, without breaking immersion by pulling up a traditional pause menu.
+      </p>
+        <!-- Video of UI -->
+      
+    </section>
+
+    <section class="card">
+      <h2>Intro Video</h2>
+      <p>
+        I also wrote, directed, edited, and even acted in the intro cutscene video that plays at the beginning of the game. I wanted
+         to create something that would both immediately immerse the player in the world and set the chilling tone for the game. 
+         The patriot test informational video that plays when you first enter the game did just that. 
+      </p>
+        <!-- Video -->
+      <div class="video-wrapper">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/r4fXzZpCDSY"
+                    title="Milgram Experiment Intro Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+    </section>
+
+  </div>
 </body>
 </html>
