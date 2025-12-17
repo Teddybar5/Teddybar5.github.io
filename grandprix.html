@@ -1,49 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Grand Prix – Project</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  body{ background:#0b0c0f; color:#e6e8ef; font-family:Inter; padding:20px; }
-  a{ color:#8bdcff; }
-  .back{ margin-bottom:20px; display:inline-block; }
-  .slider{ position:relative; overflow:hidden; border:1px solid #222534; border-radius:12px; margin-top:20px;}
-  .slider-track{ display:flex; transition:.3s; }
-  .slider-track img{ width:100%; flex-shrink:0; }
-  .slider-btn{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.4); color:white; border:none; padding:8px 12px; cursor:pointer; }
-  .prev{ left:10px;} .next{ right:10px;}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grand Prix – Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e8ef;
+      --muted: #b6b9c6;
+      --accent: #6ee7ff;
+      --border: #222534;
+      --link: #8bdcff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 900px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.6;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:24px;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    h1{
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 12px 0;
+      font-weight:800;
+    }
+
+    h2{
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    p{ margin: 0 0 12px 0; }
+
+    .meta{
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    section{ margin-bottom: 28px; }
+
+    /* Slider */
+    .slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:12px;
+      border:1px solid var(--border);
+    }
+
+    .slider-track{
+      display:flex;
+      transition: transform .3s ease;
+    }
+
+    .slider-track img{
+      width:100%;
+      flex-shrink:0;
+      object-fit:cover;
+    }
+
+    .slider-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.4);
+      border:none;
+      color:white;
+      font-size:22px;
+      padding:8px 12px;
+      cursor:pointer;
+    }
+
+    .slider-btn.prev{ left:10px; }
+    .slider-btn.next{ right:10px; }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:#0f1320;
+      border:1px solid var(--border);
+      font-weight:600;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<a href="index.html" class="back">← Back to Portfolio</a>
+    <a href="index.html" class="back">← Back to Portfolio</a>
 
-<h1>Grand Prix</h1>
-<p>
-Grand Prix is a strategic card game blending bluffing mechanics with consecutive 1v1 racing duels. Players spend resources, plan risk, and execute timed attacks to win races.
-<br><br>
-I was team lead and lead designer, developing the full game system and rule set.
-</p>
+    <!-- Overview -->
+    <section class="card">
+      <h1>Grand Prix</h1>
+      <div class="meta">September–December 2024 · Strategic Card Game</div>
+      <p>
+        <strong>Grand Prix</strong> is a strategic card game that blends bluffing
+        mechanics with consecutive 1v1 racing duels. Players must carefully
+        manage resources, read opponents, and strike at precisely the right
+        moment to secure victory. I was the lead designer for this project and 
+        led all of the playtesting and gameplay iteration.
+      </p>
+    </section>
 
-<div class="slider">
-  <div class="slider-track">
-    <img src="images/GrandPrixSC0.png">
-    <img src="images/GrandPrixSC1.png">
-    <img src="images/GrandPrixSC2.png">
-  </div>
-  <button class="slider-btn prev">&#10094;</button>
-  <button class="slider-btn next">&#10095;</button>
-</div>
+    <!-- Design & Leadership -->
+    <section class="card">
+      <h2>Punting Design</h2>
+      <p>
+        I am fascinated by the concept of “Punting”. I think that football is one of the most well designed
+         games of all time and punting is a core reason why. On paper it seems like a horrible decision, 
+         why would you willingly give the initiative and power to score to the other team? Why wouldn’t 
+         you just go try and score yourself? The way that football works encourages teams to punt to avoid 
+         things from getting any worse and prevent their opponents from getting favorable positions.
+      </p>
+      <p>
+        I wanted to create a game that features punting as both a mechanic that was not just viable, but
+         felt strategic. In doing so I created the card game Grand Prix. The core mechanic is stockpiling 
+         resources and striking at the right moment to duel every other player successively. If at some point
+         you run low on resources before defeating everyone you may punt, and keep your winnings instead of 
+         starting back over from zero. A majority of the development time was spent playtesting, gathering 
+         feedback, and finally iterating and fine tuning the mechanics until they were fun, intuitive and 
+         easy to learn. What we were left with was a fast-paced pub style card game that produces epic 
+         moments when someone finally pulls off a full grand prix. 
+      </p>
+      <img
+        src="Images/gpRuleBook1.png"
+        alt="Critical path layout through the level"
+        style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
+      >
+      <img
+        src="Images/gpRuleBook2.png"
+        alt="Critical path layout through the level"
+        style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
+      >
+    </section>
 
-<script>
-const t2=document.querySelector('.slider-track');
-const s2=document.querySelectorAll('.slider-track img');
-let i2=0;
-function upd(){ t2.style.transform=`translateX(${-i2*100}%)`; }
-document.querySelector('.next').onclick=()=>{ i2=(i2+1)%s2.length; upd(); }
-document.querySelector('.prev').onclick=()=>{ i2=(i2-1+s2.length)%s2.length; upd(); }
-</script>
+  <script>
+    const slider = document.querySelector('.slider');
+    const track = slider.querySelector('.slider-track');
+    const slides = slider.querySelectorAll('img');
+    const prev = slider.querySelector('.prev');
+    const next = slider.querySelector('.next');
+
+    let index = 0;
+
+    function update(){
+      track.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    next.onclick = () => {
+      index = (index + 1) % slides.length;
+      update();
+    };
+
+    prev.onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    };
+  </script>
 
 </body>
 </html>
