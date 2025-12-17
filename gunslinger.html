@@ -1,52 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Gunslinger Breakout – Project</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  body { background:#0b0c0f; color:#e6e8ef; font-family:Inter, sans-serif; margin:0; padding:20px; }
-  a { color:#8bdcff; text-decoration:none; }
-  .back { display:inline-block; margin-bottom:20px; }
-  .slider { position:relative; overflow:hidden; border:1px solid #222534; border-radius:12px; margin-top:20px; }
-  .slider-track { display:flex; transition:0.3s; }
-  .slider-track img { width:100%; object-fit:cover; flex-shrink:0; }
-  .slider-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.4); color:white; border:none; padding:8px 12px; cursor:pointer; }
-  .prev { left:10px; } .next { right:10px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gunslinger Breakout – Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e8ef;
+      --muted: #b6b9c6;
+      --accent: #6ee7ff;
+      --border: #222534;
+      --link: #8bdcff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 900px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.6;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:24px;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    h1{
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 12px 0;
+      font-weight:800;
+    }
+
+    h2{
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    p{ margin: 0 0 12px 0; }
+
+    .meta{
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    section{ margin-bottom: 28px; }
+
+    /* Slider */
+    .slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:12px;
+      border:1px solid var(--border);
+    }
+
+    .slider-track{
+      display:flex;
+      transition: transform .3s ease;
+    }
+
+    .slider-track img{
+      width:100%;
+      flex-shrink:0;
+      object-fit:cover;
+    }
+
+    .slider-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.4);
+      border:none;
+      color:white;
+      font-size:22px;
+      padding:8px 12px;
+      cursor:pointer;
+    }
+
+    .slider-btn.prev{ left:10px; }
+    .slider-btn.next{ right:10px; }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:#0f1320;
+      border:1px solid var(--border);
+      font-weight:600;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<a href="index.html" class="back">← Back to Portfolio</a>
+    <a href="index.html" class="back">← Back to Portfolio</a>
 
-<h1>Gunslinger Breakout</h1>
-<p>
-Gunslinger Breakout is a 3D FPS puzzle game built around a revolver with special ability bullets. Players combine six unique shot types to solve increasingly complex puzzles.
-<br><br>
-I worked as a gameplay and level designer, creating all levels and ensuring puzzles showcased the game’s mechanics effectively.
-</p>
+    <!-- Overview -->
+    <section class="card">
+      <h1>Gunslinger Breakout</h1>
+      <div class="meta">April–August 2024 · Unity 3D</div>
+      <p>
+        <strong>Gunslinger Breakout</strong> is a 3D FPS puzzle game built around
+        a revolver loaded with special ability bullets. Players can choose from
+        six unique shot types — Cryo, Ricochet, Airburst, Power Charge, Gravity,
+        and Persist to solve puzzles and escape increasingly challenging rooms. 
+        I worked on content design establishing the different bullets as well 
+        as level design for all of the game’s levels.
+      </p>
+    </section>
 
-<div class="slider">
-  <div class="slider-track">
-    <img src="images/gbr1.png">
-    <img src="images/gbr2.png">
-    <img src="images/gbr3.png">
-    <img src="images/gbr4.png">
-    <img src="images/gbr5.png">
-    <img src="images/gbr6.png">
+    <!-- Bullet Design -->
+    <section class="card">
+      <h2>Bullet Design</h2>
+      <p>
+        When designing bullets we wanted to avoid “lock and key” designs, use this to solve this, that 
+        did not allow for dynamic gameplay and puzzles. The only bullets we included that were like 
+        this were the ricochet bullet and the emp bullet. Even still, these provide a spin to the 
+        typical “shoot this to do this” archetype by making ricochet, that you have to strategically 
+        aim, and emp that allows you to turn things on AND off, for a little bit more dynamic gameplay. 
+        Aside from these, the rest all promote dynamic, physics based puzzle solving. Cryo allows both 
+        the player and objects to slide which can create dynamic solutions to puzzles that might not have 
+        been intended, but creative solutions are always a good thing. Airburst is similar but instead 
+        launches either the player or objects. Gravity allows players to reach far areas and move objects 
+        in more precise ways as opposed to airburst. Finally persist allows players to put objects places 
+        or stop certain moving surfaces or objects to solve puzzles. 
+
+      </p>
+    </section>
+
+    <!-- Ice Box -->
+    <section class="card">
+      <h2>Icebox Level Design Breakdown</h2>
+      <p>
+        For this level the player must use 3 different bullets in a creative way in order to escape the level.
+         They must realize that using just gravity bullets to get up the ledges does not leave them with 
+         enough bullets to fully solve the level. Therefore, they must use the boxes with a cryo bullet so 
+         they can move it and get up on multiple ledges using only 1 bullet. This mechanic is shown and developed 
+         throughout the level which encourages the player to think out of the box and use their resources 
+         efficiently in order to solve the level.
+      </p>
+      <img
+        src="Images/iceBoxLevel.png"
+        alt="Critical path layout through the level"
+        style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
+      >
+    </section>
+
+  <!-- Fun Times Box -->
+    <section class="card">
+      <h2>Fun Times Level Design Breakdown</h2>
+      <p>
+        For this Level the player must use the gravity bullet to reach the top of the level and escape. 
+        This is an intro level for the gravity bullet mechanics and it teaches the player gradually certain 
+        ways it can be used to move the player around a level. The player is initially presented with a
+         blue platform that they must figure out to shoot with the gravity bullet in order to reach the 
+         next platform. The challenge ramps up as they must use 2 gravity bullets to reach the third 
+         platform and 3 bullets to reach the final platform and complete the level.
+      </p>
+      <img
+        src="Images/funTimesLevel.png"
+        alt="Critical path layout through the level"
+        style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
+      >
+      </section>
   </div>
-  <button class="slider-btn prev">&#10094;</button>
-  <button class="slider-btn next">&#10095;</button>
-</div>
 
-<script>
-const track = document.querySelector('.slider-track');
-const slides = document.querySelectorAll('.slider-track img');
-let idx = 0;
-function update(){ track.style.transform = `translateX(${-idx * 100}%)`; }
-document.querySelector('.next').onclick = () => { idx = (idx+1)%slides.length; update(); }
-document.querySelector('.prev').onclick = () => { idx = (idx-1+slides.length)%slides.length; update(); }
-</script>
+  <script>
+    const slider = document.querySelector('.slider');
+    const track = slider.querySelector('.slider-track');
+    const slides = slider.querySelectorAll('img');
+    const prev = slider.querySelector('.prev');
+    const next = slider.querySelector('.next');
+
+    let index = 0;
+
+    function update(){
+      track.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    next.onclick = () => {
+      index = (index + 1) % slides.length;
+      update();
+    };
+
+    prev.onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    };
+  </script>
 
 </body>
 </html>
