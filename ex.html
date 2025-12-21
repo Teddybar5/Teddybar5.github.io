@@ -145,6 +145,40 @@
         margin-top: 8px;
       }
     }
+
+    .slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .slider-track img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    /* Arrows */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .slider-btn.prev { left: 8px; }
+    .slider-btn.next { right: 8px; }
   </style>
 </head>
 
@@ -175,12 +209,7 @@
          stealth game and go from streetlamp to streetlamp stalking someone, only you don’t realize you are stalking them at 
          first, this would be revealed at the end. 
       </p>
-      <!-- diagram of what the game would've been here -->
-       <img
-        src="Images/temp.png"
-        alt="Critical path layout through the level"
-        style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
-      >
+   
       <p>
         One of the challenges with the game jam, however, was that we were required to use only the provided assets and make 
         nothing outside of the unity engine. This provided an interesting challenge as a lot of the assets were of the interior
@@ -213,42 +242,85 @@
       </p>
 
       <!-- Screenshots of the level -->
-      <img
-        src="Images/temp.png"
-        alt="Level overview showing alien-inspired house environment"
-        style="width:100%; border-radius:12px; border:1px solid var(--border); margin:12px 0;"
-      >
+      <div class="slider">
+          <div class="slider-track">
+            <img src="Images/lvlDesign0.png" alt="Screenshot 0">
+            <img src="Images/lvlDesign1.png" alt="Screenshot 1">
+            <img src="Images/lvlDesign2.png" alt="Screenshot 2">
+            <img src="Images/lvlDesign3.png" alt="Screenshot 3">
+            <img src="Images/exAlienPlacement.png" alt="Screenshot 4">
+            <img src="Images/exTablePlacement.png" alt="Screenshot 4">
+          </div>
+          <button class="slider-btn prev">&#10094;</button>
+          <button class="slider-btn next">&#10095;</button>
+        </div>
 
       <!-- Second block with smaller image to the side -->
     <div class="split">
       <div>
         <p>
           Another important decision I made was the placement of the alien. I wanted to show it to the player early while also
-          pointing them in the correct direction for progression. That is why I put the alien right there. 
+          pointing them in the correct direction for progression. I wanted to avoid tutorials or pop-ups since they break the immersion,
+          and immersion was very important for our game. Instead I wanted to teach the player by giving them one option, to learn the
+          mechanics. That is why I put the alien in the bathroom right by the entrance.
+        
         </p>
       </div>
 
       <img
         class="side-img"
-        src="Images/temp.png"
+        src="Images/exAlien.png"
         alt="Alien placement guiding player progression"
       >
     </div>
 
       <p>
-        This causes the alien to walk towards the player when the game first starts right after they pass a table that they can hide 
-        under, so they instinctively run back and hide under the table. This teaches them the core mechanic right away. Afterwards 
+        When the player first enters the house the first thing they see is a table they can hide under. Right after this the alien comes 
+        out and walks towards the player. The only way for the player not to get caught is to hide under the table. This teaches them
+        the core mechanic right away. Afterwards 
         the alien walks back towards the bathroom, encouraging the player to go the opposite direction towards the end door, which 
         is the way to progress the game. After they find the end door for the first time keys will be spawned from a random list of 
         curated spots. The critical path is as follows:
+        The player enters the house, sees the alien, hides, and the heads in the opposite direction typically. The player then finds 
+        the locked door which prompts the player to find some keys. These keys spawn at a random point from a curated list of possibilies. 
+        An example is shown below:
       </p>
       <!-- Screenshot of the critical path -->
       <img
-        src="Images/temp.png"
+        src="Images/criticalPathBeforeKey.png"
+        alt="Critical path layout through the level"
+        style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
+      >
+      <img
+        src="Images/criticalPathAfterKey.png"
         alt="Critical path layout through the level"
         style="width:100%; border-radius:12px; border:1px solid var(--border); margin-top:12px;"
       >
     </section>
+
+  <script>
+    document.querySelectorAll('.slider').forEach(slider => {
+    const track = slider.querySelector('.slider-track');
+    const slides = slider.querySelectorAll('img');
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    let index = 0;
+
+    function updateSlider() {
+      track.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+  });
+  </script>
 
 </body>
 </html>
