@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Animalia – Project</title>
+  <title>EX-Traterrestrial – Project</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,7 +94,7 @@
 
     .video-container iframe{
       position:absolute;
-      inset:0;
+      top:0; left:0;
       width:100%;
       height:100%;
     }
@@ -116,6 +116,69 @@
       border:1px solid var(--border);
       font-weight:600;
     }
+
+    /* Split layout for text + media */
+    .split{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;               /* closer to the text */
+      align-items: start;
+    }
+
+    /* Small side image */
+    .side-img{
+      width: 280px;            /* slightly bigger */
+      max-width: 45vw;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    /* Stack on mobile */
+    @media (max-width: 768px){
+      .split{
+        grid-template-columns: 1fr;
+      }
+      .side-img{
+        width: 100%;
+        max-width: 100%;
+        margin-top: 8px;
+      }
+    }
+
+    .slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .slider-track img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    /* Arrows */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .slider-btn.prev { left: 8px; }
+    .slider-btn.next { right: 8px; }
   </style>
 </head>
 
@@ -124,47 +187,69 @@
 
     <a href="index.html" class="back">← Back to Portfolio</a>
 
-    <!-- Overview -->
+    <!-- Title / Overview -->
     <section class="card">
-      <h1>Overview</h1>
+      <h1>EX-Traterrestrial</h1>
       <div class="meta">June 2026 - Present · Unreal 3D</div>
       <p>
         <strong>Animalia</strong> is 3D isometric rpg narrative experience in active development.
-      </p>
-      <p>
+        <br>
         I am the sole puzzle designer for the project
       </p>
     </section>
 
-    <!-- Solo Development -->
+    <!-- Level Design -->
     <section class="card">
       <h2>Puzzle Design</h2>
+
       <p>
-         For this project I was tasked with creating 6 unique puzzles that incorporated all major mecahnics in interesting ways, and seemed to fit within the world naturally. This meant no large buttons
-        or levers. It meant that everything should feel like a natural part of the world, and the roadblocks just happen to block the way. The core mechanics were hitting things, and pulling things towards you.
-        I started by making a puzzle solely with hitting things, and forcing the player to think outside the box to solve it, which would teach them that they have to do this in general and allow for more difficult
-        and interesting puzzles. Next I wanted to show that the puzzles interact with the world and the enemies, and they are not entirely seperate. I build upon this idea in the next puzzles where you have to push and
-        pull certain objects and interact with the world in order to cross a river and proceed. Below are all of the paper mockups of the puzzles with clear descriptions. The game is currently in active develop
-        ment so playable versions will slowly become available then.
+        For this project I was tasked with creating 6 unique puzzles that incorporated all major mecahnics in interesting ways, and seemed to fit within the world naturally.
+        This meant no large buttons or levers. It meant that everything should feel like a natural part of the world, and the roadblocks just happen to block the way. The core mechanics were 
+        hitting things, and pulling things towards you. I started by making a puzzle solely with hitting things, and forcing the player to think outside the box to solve it, which would teach 
+        them that they have to do this in general and allow for more difficult and interesting puzzles. Next I wanted to show that the puzzles interact with the world and the enemies, and they are not 
+        entirely seperate. I build upon this idea in the next puzzles where you have to push and pull certain objects and interact with the world in order to cross a river and proceed. Below are all 
+        of the paper mockups of the puzzles with clear descriptions. The game is currently in active develop ment so playable versions will slowly become available then. 
       </p>
-      <p>
-        <div class="slider">
+
+      <!-- Screenshots of the level -->
+      <div class="slider">
           <div class="slider-track">
-            <img src="Images/level0.png" alt="Puzzle 0">
-            <img src="Images/level1.png" alt="Puzzle 1">
-            <img src="Images/level2.png" alt="Puzzle 2">
-            <img src="Images/level3.png" alt="Puzzle 3">
-            <img src="Images/level4.png" alt="Puzzle 4">
+            <img src="Images/lvlDesign0.png" alt="Screenshot 0">
+            <img src="Images/lvlDesign1.png" alt="Screenshot 1">
+            <img src="Images/lvlDesign2.png" alt="Screenshot 2">
+            <img src="Images/lvlDesign3.png" alt="Screenshot 3">
+            <img src="Images/exAlienPlacement.png" alt="Screenshot 4">
+            <img src="Images/exTablePlacement.png" alt="Screenshot 4">
           </div>
           <button class="slider-btn prev">&#10094;</button>
           <button class="slider-btn next">&#10095;</button>
         </div>
-      </p>
+
     </section>
 
-    <!-- Gameplay Video still? -->
-    
+  <script>
+    document.querySelectorAll('.slider').forEach(slider => {
+    const track = slider.querySelector('.slider-track');
+    const slides = slider.querySelectorAll('img');
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    let index = 0;
 
-  </div>
+    function updateSlider() {
+      track.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+  });
+  </script>
+
 </body>
 </html>
